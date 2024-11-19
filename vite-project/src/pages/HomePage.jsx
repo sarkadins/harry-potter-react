@@ -1,9 +1,9 @@
-import React from 'react'
+const HomePage = () => (
+  
+  <div className="page">
+    <h1>Welcome to the Wizarding World</h1>
+    <p>Explore characters, spells, and more!</p>
+  </div>
+);
 
-function HomePage() {
-  return (
-    <div>HomePage</div>
-  )
-}
-
-export default HomePage
+export default HomePage;
