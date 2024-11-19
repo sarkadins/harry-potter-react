@@ -4,9 +4,15 @@ const Sidebar = () => (
   <div className="sidebar">
     <h1>Harry Potter App</h1>
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/characters">Characters</Link>
-      <Link to="/spells">Spells</Link>
+      <p>
+        <Link to="/">Home</Link>
+      </p>
+      <p>
+        <Link to="/characters">Characters</Link>
+      </p>
+      <p>
+        <Link to="/spells">Spells</Link>
+      </p>
     </nav>
   </div>
 );
