@@ -1,13 +1,14 @@
-function CharacterList( {characters }) {
+import { Link } from "react-router-dom"
+
+function CharacterList({ characters }) {
   return (
     <ul>
       {characters.map((character, index) => (
-        <>
-        <li key={index}>{character.name}</li>
-        <img src={character.image} sizes="9*9"/>
-        <p key={index}>{character.species}</p>
-        <p key={index}>{character.gender}</p>
-        </>
+        <li key={index}>
+          <Link to={`/characters/${character.id}`}>
+            {character.name}
+          </Link>
+        </li>
       ))}
     </ul>
   )
