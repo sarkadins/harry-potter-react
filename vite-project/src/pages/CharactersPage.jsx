@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import CharacterList from '../components/CharacterList';
 import HouseSelector from '../components/HouseSelector';
 
 function CharactersPage() {
+  const {house} = useParams();
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [house, setHouse] = useState("");
-
+  
   useEffect(() => {
     if (!house) {
       setLoading(false)
@@ -29,9 +30,9 @@ function CharactersPage() {
   return (
     <div>
       {loading ? (<p>Loading...</p>) : (
-        <main>
+        <main>  
           <h1>Characters</h1>
-          <HouseSelector onHouseChange={setHouse} />
+          <HouseSelector onHouseChange={(house) => {}} />
           <CharacterList characters={characters} />
         </main>
       )}

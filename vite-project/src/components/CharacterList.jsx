@@ -6,7 +6,7 @@ function CharacterList({ characters }) {
     <ul>
       {characters.map((character, index) => (
         <li key={index}>
-          <Link to={`/characters/${character.id}`}>
+          <Link to={`/character/${character.id}`}>
             {character.name}
           </Link>
         </li>
