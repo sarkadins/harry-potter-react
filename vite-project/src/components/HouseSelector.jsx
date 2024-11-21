@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./HouseSelector.css"
 
 function HouseSelector({ onHouseChange }) {
 
