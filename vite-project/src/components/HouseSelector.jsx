@@ -1,6 +1,19 @@
+import { useNavigate } from "react-router-dom";
+
 function HouseSelector({ onHouseChange }) {
+
+  const navigate = useNavigate(); 
+
+  const handleChange = (e) => {
+    const selectedHouse = e.target.value;
+    onHouseChange(selectedHouse);
+    if (selectedHouse) {
+      navigate(`/characters/${selectedHouse}`); 
+    }
+  };
+
   return (
-    <select onChange={(e) => onHouseChange(e.target.value)}>
+    <select onChange={handleChange}>
       <option value="">Select a House</option>
       <option value="gryffindor">Gryffindor</option>
       <option value="slytherin">Slytherin</option>
