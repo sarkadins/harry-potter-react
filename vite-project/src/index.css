@@ -1,51 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap');
 
 body {
-  background-image: url('/castle-of-hogwarts.jpg'); /* Background image from the public folder */
-  background-size: cover; /* Scale the image to cover the entire viewport */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-attachment: fixed; /* Keep the background fixed during scrolling */
-  min-height: 100vh; /* Ensure the body covers the full height of the viewport */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-}
-
-
-/* Sidebar Styles */
-.sidebar {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border-radius: 8px;
-  width: 200px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.5);
-  color: #fff;
-  z-index: 10;
+  background-image: url('/castle-of-hogwarts.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  min-height: 100vh; 
+  margin: 0;
+  padding: 0;
 }
 
 /* Main Content */
 main, .homepage, .spells {
-  margin-left: 220px; /* Sidebar width */
+  margin-left: 220px;
   padding: 20px;
-  font-family: 'Cinzel', serif; /* Harry Potter theme font */
+  font-family: 'Cinzel', serif; 
   color: #ffd700;
 }
+
+select:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+} */
 
 /* Dropdown Menu */
 select {
   position: relative;
-  z-index: 15; /* Higher than sidebar */
+  z-index: 15; 
 }
 
 /* Logo Styling (if needed) */
 header h1 {
   font-size: 2em;
   text-align: center;
-  font-family: 'Cinzel', serif; /* Harry Potter theme font */
-  color: #ffd700; /* Golden color */
-  z-index: 20; /* Ensure it's above everything */
+  font-family: 'Cinzel', serif;
+  color: #ffd700;
+  z-index: 20;
 }
