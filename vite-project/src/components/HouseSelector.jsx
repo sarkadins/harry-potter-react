@@ -1,4 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import "./HouseSelector.css"
+
 
 function HouseSelector({ onHouseChange }) {
   const navigate = useNavigate();
@@ -27,4 +29,8 @@ function HouseSelector({ onHouseChange }) {
   );
 }
 
+<<<<<<< HEAD
 export default HouseSelector;
+=======
+export default HouseSelector;
+>>>>>>> 919dde3911ea375e4e48af143a73035369937473

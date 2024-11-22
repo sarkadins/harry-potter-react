@@ -60,3 +60,13 @@ function CharactersPage() {
 }
 
 export default CharactersPage;
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+>>>>>>> 919dde3911ea375e4e48af143a73035369937473
