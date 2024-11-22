@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CharacterList from "../components/CharacterList";
 import HouseSelector from "../components/HouseSelector";
+import "./CharactersPage.css"
 
 function CharactersPage() {
   const { house: routeHouse } = useParams(); 
@@ -9,6 +10,21 @@ function CharactersPage() {
   const [allCharacters, setAllCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [house, setHouse] = useState(routeHouse || ""); 
+  const [backgroundClass, setBackgroundClass] = useState('');
+
+  // Set the background class based on the house
+  useEffect(() => {
+     {
+      const backgroundMapping = {
+        default: 'background-default',
+        gryffindor: 'background-gryffindor',
+        slytherin: 'background-slytherin',
+        hufflepuff: 'background-hufflepuff',
+        ravenclaw: 'background-ravenclaw',
+      };
+      setBackgroundClass(backgroundMapping[house] || 'background-default');
+    }
+  }, [house]);
 
 
   useEffect(() => {
@@ -45,7 +61,7 @@ function CharactersPage() {
   };
 
   return (
-    <div>
+    <div className={`characters-page ${backgroundClass}`}>
       {loading ? (
         <p>Loading...</p>
       ) : (

@@ -1,0 +1,29 @@
+.characters-page {
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  min-height: 100vh; 
+  margin: 0;
+  padding: 0;
+}
+
+.backround-default {
+  background-image: url('/castle-of-hogwarts.jpg');
+}
+
+.background-gryffindor {
+  background-image: url('/gryffindor.png');
+}
+
+.background-slytherin {
+  background-image: url('/slytherin.png');
+}
+
+.background-hufflepuff {
+  background-image: url('/hufflepuff.png');
+}
+
+.background-ravenclaw {
+  background-image: url('/ravenclaw.png');
+}
