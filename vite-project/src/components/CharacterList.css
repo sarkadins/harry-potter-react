@@ -1,0 +1,52 @@
+/* Character Grid */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+}
+
+/* Character Card */
+.character-card {
+  background-color: rgba(16, 6, 53, 0.9); /* Parchment-like background */
+  border: 2px solid #31026e; /* Gryffindor red border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* Hover effects */
+  width: 200px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out the content */
+}
+
+/* Consistent Height for Title */
+.character-card h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2em;
+  color: #05abec; /* Gryffindor red */
+  margin: 10px 0;
+  height: 3em; /* Fixed height for titles (1 or 2 lines) */
+  overflow: hidden; /* Hide overflow if the name is too long */
+  text-overflow: ellipsis; /* Add "..." if the text overflows */
+  display: -webkit-box; /* For multi-line truncation */
+  -webkit-line-clamp: 2; /* Show up to 2 lines */
+  -webkit-box-orient: vertical; /* Required for line clamping */
+}
+
+/* Character Image */
+.character-image {
+  max-width: 100%; /* Ensure the image fits within the card */
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+  border-radius: 8px; /* Rounded corners for images */
+  margin: 10px 0;
+}
+
+/* Hover Effects for Cards */
+.character-card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+}
