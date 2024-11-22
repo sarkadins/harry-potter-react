@@ -1,0 +1,40 @@
+.spell-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  margin-left: 220px; /* Offset the grid by the width of the sidebar */
+}
+
+
+.spell-card {
+  background-color: rgba(16, 6, 53, 0.9); /* Parchment-like background */
+  border: 2px solid #31026e; /* Gryffindor red border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* Hover effects */
+  width: 200px; /* Fixed width */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align items at the top */
+  align-items: center; /* Center the text horizontally */
+}
+
+.spell-name {
+  font-size: 1.5em;
+  color: #cfb209; /* Golden text */
+  margin-bottom: 10px;
+  font-family: 'Cinzel', serif; 
+}
+
+.spell-description {
+  font-size: 1.1em;
+  color: #e4cf12; /* Light grey for readability */
+  margin-top: 10px;
+  flex-grow: 1; /* Ensure it takes available space */
+  display: flex;
+  align-items: center; /* Vertically center content within its space */
+  justify-content: center; /* Horizontally center the description */
+}
