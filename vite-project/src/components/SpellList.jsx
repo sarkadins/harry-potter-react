@@ -1,14 +1,16 @@
+import "./SpellList.css"
+
 function SpellList({ spells }) {
   return (
-    <div className="spells">
+    <div className="spell-grid">
       {spells && spells.map((spell, index) => (
-        <nav key={index}>
-          <li >
+        <nav key={index} className="spell-card">
+          <h1 className="spell-name">
             {spell.name}
-          </li>
-          <ul>
+          </h1>
+          <p className="spell-description">
             {spell.description}
-          </ul>
+          </p>
         </nav>
       ))}
     </div>
