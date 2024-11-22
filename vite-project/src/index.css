@@ -19,16 +19,6 @@ main, .homepage, .spells {
   color: #ffd700;
 }
 
-select:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-} */
-
-/* Dropdown Menu */
-select {
-  position: relative;
-  z-index: 15; 
-}
-
 /* Logo Styling (if needed) */
 header h1 {
   font-size: 2em;
