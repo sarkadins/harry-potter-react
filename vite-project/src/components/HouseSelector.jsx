@@ -1,21 +1,26 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./HouseSelector.css"
 
-function HouseSelector({ onHouseChange }) {
 
-  const navigate = useNavigate(); 
+function HouseSelector({ onHouseChange }) {
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleChange = (e) => {
     const selectedHouse = e.target.value;
+
     onHouseChange(selectedHouse);
+
     if (selectedHouse) {
-      navigate(`/characters/${selectedHouse}`); 
+      navigate(`/characters/${selectedHouse.toLowerCase()}`);
+    } else {
+      navigate("/characters");
     }
   };
 
   return (
-    <select onChange={handleChange}>
-      <option value="">Select a House</option>
+    <select onChange={handleChange} value={location.pathname.split("/")[2] || ""}>
+      <option value="">All Characters</option>
       <option value="gryffindor">Gryffindor</option>
       <option value="slytherin">Slytherin</option>
       <option value="hufflepuff">Hufflepuff</option>
@@ -24,4 +29,4 @@ function HouseSelector({ onHouseChange }) {
   );
 }
 
-export default HouseSelector
+export default HouseSelector;
