@@ -1,43 +1,62 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import CharacterList from '../components/CharacterList';
-import HouseSelector from '../components/HouseSelector';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import CharacterList from "../components/CharacterList";
+import HouseSelector from "../components/HouseSelector";
 
 function CharactersPage() {
-  const {house} = useParams();
+  const { house: routeHouse } = useParams(); 
   const [characters, setCharacters] = useState([]);
+  const [allCharacters, setAllCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+  const [house, setHouse] = useState(routeHouse || ""); 
+
+
   useEffect(() => {
-    if (!house) {
-      setLoading(false)
-      return;
-    }
-    const fetchCharactersData = async () => {
+    const fetchAllCharacters = async () => {
+      setLoading(true);
       try {
-        const response = await fetch(`https://hp-api.onrender.com/api/characters/house/${house}`)
-        const charactersData = await response.json()
-        setCharacters(charactersData)
+        const response = await fetch("https://hp-api.onrender.com/api/characters");
+        const data = await response.json();
+        setAllCharacters(data); 
+        setCharacters(data);
       } catch (error) {
-        console.error(error)
+        console.error("Error fetching characters:", error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
+    };
+    fetchAllCharacters();
+  }, []);
+
+  useEffect(() => {
+    if (house) {
+      const filteredCharacters = allCharacters.filter(
+        (character) => character.house && character.house.toLowerCase() === house.toLowerCase()
+      );
+      setCharacters(filteredCharacters);
+    } else {
+      setCharacters(allCharacters); 
     }
-    fetchCharactersData()
-  }, [house])
+  }, [house, allCharacters]);
+
+  
+  const handleHouseChange = (selectedHouse) => {
+    setHouse(selectedHouse);
+  };
 
   return (
     <div>
-      {loading ? (<p>Loading...</p>) : (
-        <main>  
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <main>
           <h1>Characters</h1>
-          <HouseSelector onHouseChange={(house) => {}} />
+          <HouseSelector onHouseChange={handleHouseChange} />
           <CharacterList characters={characters} />
         </main>
       )}
     </div>
-  )
+  );
 }
 
-export default CharactersPage
+export default CharactersPage;

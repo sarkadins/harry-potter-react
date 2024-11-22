@@ -15,7 +15,7 @@ const Sidebar = () => {
               <Link to="/">Home</Link>
             </li>
           )}
-          {location.pathname !== "/characters" && (
+          {!location.pathname.startsWith("/characters/") && location.pathname !== "/characters" && (
             <li>
               <Link to="/characters">Characters</Link>
             </li>
