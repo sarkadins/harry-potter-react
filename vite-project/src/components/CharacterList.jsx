@@ -1,19 +1,28 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import "./CharacterList.css"
 
 function CharacterList({ characters }) {
   return (
+
     <div className="characters">
-    <ul>
-      {characters.map((character, index) => (
-        <li key={index}>
-          <Link to={`/character/${character.id}`}>
-            {character.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
+      <div className="character-grid">
+        {characters.map((character, index) => (
+          <div key={index} className="character-card">
+            <Link to={`/character/${character.id}`}>
+              <h2>{character.name}</h2>
+              {character && (
+                <img
+                  src={character.image || "/wizard.png"}
+                  alt={character.name}
+                  className="character-image"
+                />
+              )}
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default CharacterList
+export default CharacterList;

@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import CharactersPage from "./pages/CharactersPage";
 import SpellsPage from "./pages/SpellsPage";
 import CharacterDetails from "./components/CharacterDetails"
+import "./index.css"
 
 const App = () => {
   return (
