@@ -1,0 +1,24 @@
+.homepage {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: 100vh; /* Full viewport height */
+  text-align: center; /* Center text alignment */
+  background-size: cover;
+  background-position: center;
+  background-image: url('/castle-of-hogwarts.jpg'); /* Background image */
+  color: #ffd700; /* Golden text color */
+}
+
+.homepage h1 {
+  font-size: 3em; /* Larger font for the heading */
+  margin-bottom: 10px; /* Space below the heading */
+  font-family: 'Cinzel', serif; /* Theme-appropriate font */
+}
+
+.homepage p {
+  font-size: 1.5em; /* Smaller font for the paragraph */
+  margin-top: 0; /* Remove default margin above paragraph */
+  font-family: 'Cinzel', serif; /* Consistent font */
+}
