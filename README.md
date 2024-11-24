@@ -11,7 +11,7 @@
 
 - [🌟 About the Project](#-about-the-project)
   - [Features](#features)
-- [🛠️ Built With](#-built-with)
+- [🛠️ Built With](#️-built-with)
 - [⚡ Installation and Setup](#-installation-and-setup)
 - [🚀 Usage](#-usage)
 
