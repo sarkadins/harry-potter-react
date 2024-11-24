@@ -1,40 +1,40 @@
 .spell-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Space between cards */
+  gap: 20px; 
   padding: 20px;
-  margin-left: 220px; /* Offset the grid by the width of the sidebar */
+  margin: 0 auto; 
+  width: 90%;  /* Add a max width to constrain the grid */
 }
 
-
 .spell-card {
-  background-color: rgba(16, 6, 53, 0.9); /* Parchment-like background */
-  border: 2px solid #31026e; /* Gryffindor red border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  background-color: rgba(16, 6, 53, 0.9); 
+  border: 2px solid #31026e; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   padding: 15px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s; /* Hover effects */
-  width: 200px; /* Fixed width */
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 200px; 
   display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: flex-start; /* Align items at the top */
-  align-items: center; /* Center the text horizontally */
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center;
 }
 
 .spell-name {
   font-size: 1.5em;
-  color: #cfb209; /* Golden text */
+  color: #cfb209; 
   margin-bottom: 10px;
   font-family: 'Cinzel', serif; 
 }
 
 .spell-description {
   font-size: 1.1em;
-  color: #e4cf12; /* Light grey for readability */
+  color: #e4cf12;
   margin-top: 10px;
-  flex-grow: 1; /* Ensure it takes available space */
+  flex-grow: 1; 
   display: flex;
-  align-items: center; /* Vertically center content within its space */
-  justify-content: center; /* Horizontally center the description */
+  align-items: center; 
+  justify-content: center; 
 }
