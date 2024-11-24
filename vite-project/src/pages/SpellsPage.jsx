@@ -26,17 +26,19 @@ function SpellsPage() {
 
   const handleSearch = (e) => {
     const term = e.target.value.toLowerCase();
-    setSearchTerm(term); // Update the search term
+    setSearchTerm(term);
     const filtered = spells.filter((spell) =>
       spell.name.toLowerCase().includes(term)
     );
-    setFilteredSpells(filtered); // Update the filtered spells
+    setFilteredSpells(filtered);
   };
 
   return (
     <div className="spells-page">
       {loading ? (
-        <p>...Loading</p>
+        <main>
+          <h4>...Loading</h4>
+        </main>
       ) : (
         <main>
           <h1>Spells</h1>
