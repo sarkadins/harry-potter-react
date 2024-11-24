@@ -63,7 +63,9 @@ function CharactersPage() {
   return (
     <div className={`characters-page ${backgroundClass}`}>
       {loading ? (
-        <p>Loading...</p>
+        <main>
+          <h4>Loading...</h4>
+        </main>
       ) : (
         <main>
           <h1>Characters</h1>

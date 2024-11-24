@@ -6,21 +6,54 @@
   padding: 20px;
 }
 
-/* Character Card */
+/* Character Card Default Background */
+.character-card-default {
+  background-color: rgba(16, 6, 53, 0.9);
+}
+
+/* Gryffindor Background */
+.character-card-gryffindor {
+  background-color: rgba(184, 70, 70, 0.8); /* Pale Red */
+  border: 2px solid #ff5733;
+}
+
+/* Slytherin Background */
+.character-card-slytherin {
+  background-color: rgba(0, 128, 0, 0.8); /* Light Green */
+  border: 2px solid #39d139;
+}
+
+/* Hufflepuff Background */
+.character-card-hufflepuff {
+  background-color: rgba(255, 223, 0, 0.8); /* Light Yellow */
+  border: 2px solid #ffd700;
+}
+
+/* Ravenclaw Background */
+.character-card-ravenclaw {
+  background-color: rgba(0, 102, 204, 0.8); /* Light Blue */
+  border: 2px solid #1e90ff;
+}
+
+/* Common Styling */
 .character-card {
-  background-color: rgba(16, 6, 53, 0.9); /* Parchment-like background */
-  border: 2px solid #31026e; /* Gryffindor red border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   padding: 15px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s; /* Hover effects */
-  width: 200px; /* Fixed width */
-  height: 300px; /* Fixed height */
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 200px;
+  height: 300px;
   display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: space-between; /* Space out the content */
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.character-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
 
 /* Consistent Height for Title */
 .character-card h2 {
@@ -45,8 +78,3 @@
   margin: 10px 0;
 }
 
-/* Hover Effects for Cards */
-.character-card:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Deeper shadow */
-}
