@@ -9,11 +9,11 @@
 ---
 ## 📋 Table of Contents
 
-- [🌟 About the Project](#🌟-about-the-project)
+- [🌟 About the Project](#-about-the-project)
   - [Features](#features)
-- [🛠️ Built With](#🛠️-built-with)
-- [⚡ Installation and Setup](#⚡-installation-and-setup)
-- [🚀 Usage](#🚀-usage)
+- [🛠️ Built With](#-built-with)
+- [⚡ Installation and Setup](#-installation-and-setup)
+- [🚀 Usage](#-usage)
 
 ---
 
