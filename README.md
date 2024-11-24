@@ -19,7 +19,7 @@
 
 ## 🌟 About the Project
 
-The **Harry Potter React App** is an interactive web application where users can explore characters, spells, and houses from the magical world of Harry Potter. This application is built using React and leverages dynamic routing, responsive design, and external APIs to fetch character and spell data.
+The **Harry Potter React App** is an interactive web application where users can explore characters, spells, and houses from the magical world of Harry Potter. This application is built using React and leverages dynamic routing, responsive design, and [external APIs](https://hp-api.onrender.com/) to fetch character and spell data.
 
 ### Features
 
