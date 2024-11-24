@@ -2,30 +2,28 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CharacterList from "../components/CharacterList";
 import HouseSelector from "../components/HouseSelector";
-import "./CharactersPage.css"
+import "./CharactersPage.css";
 
 function CharactersPage() {
-  const { house: routeHouse } = useParams(); 
-  const [characters, setCharacters] = useState([]);
+  const { house: routeHouse } = useParams();
   const [allCharacters, setAllCharacters] = useState([]);
+  const [characters, setCharacters] = useState([]); 
+  const [filteredCharacters, setFilteredCharacters] = useState([]); 
+  const [house, setHouse] = useState(routeHouse || "");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [backgroundClass, setBackgroundClass] = useState("");
   const [loading, setLoading] = useState(true);
-  const [house, setHouse] = useState(routeHouse || ""); 
-  const [backgroundClass, setBackgroundClass] = useState('');
 
-  // Set the background class based on the house
   useEffect(() => {
-     {
-      const backgroundMapping = {
-        default: 'background-default',
-        gryffindor: 'background-gryffindor',
-        slytherin: 'background-slytherin',
-        hufflepuff: 'background-hufflepuff',
-        ravenclaw: 'background-ravenclaw',
-      };
-      setBackgroundClass(backgroundMapping[house] || 'background-default');
-    }
+    const backgroundMapping = {
+      default: "background-default",
+      gryffindor: "background-gryffindor",
+      slytherin: "background-slytherin",
+      hufflepuff: "background-hufflepuff",
+      ravenclaw: "background-ravenclaw",
+    };
+    setBackgroundClass(backgroundMapping[house] || "background-default");
   }, [house]);
-
 
   useEffect(() => {
     const fetchAllCharacters = async () => {
@@ -34,7 +32,8 @@ function CharactersPage() {
         const response = await fetch("https://hp-api.onrender.com/api/characters");
         const data = await response.json();
         setAllCharacters(data); 
-        setCharacters(data);
+        setCharacters(data); 
+        setFilteredCharacters(data);
       } catch (error) {
         console.error("Error fetching characters:", error);
       } finally {
@@ -46,18 +45,38 @@ function CharactersPage() {
 
   useEffect(() => {
     if (house) {
-      const filteredCharacters = allCharacters.filter(
+      const houseFiltered = allCharacters.filter(
         (character) => character.house && character.house.toLowerCase() === house.toLowerCase()
       );
-      setCharacters(filteredCharacters);
+      setCharacters(houseFiltered); 
+      setFilteredCharacters(
+        houseFiltered.filter((char) =>
+          char.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      ); 
     } else {
       setCharacters(allCharacters); 
+      setFilteredCharacters(
+        allCharacters.filter((char) =>
+          char.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      );
     }
-  }, [house, allCharacters]);
+  }, [house, allCharacters, searchTerm]);
 
-  
   const handleHouseChange = (selectedHouse) => {
     setHouse(selectedHouse);
+    setSearchTerm(""); 
+  };
+
+  const handleSearch = (e) => {
+    const term = e.target.value.toLowerCase();
+    setSearchTerm(term);
+    setFilteredCharacters(
+      characters.filter((character) =>
+        character.name.toLowerCase().includes(term)
+      )
+    );
   };
 
   return (
@@ -69,8 +88,17 @@ function CharactersPage() {
       ) : (
         <main>
           <h1>Characters</h1>
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Search for a character..."
+              value={searchTerm}
+              onChange={handleSearch}
+              className="search-bar"
+            />
+          </div>
           <HouseSelector onHouseChange={handleHouseChange} />
-          <CharacterList characters={characters} />
+          <CharacterList characters={filteredCharacters} />
         </main>
       )}
     </div>
@@ -78,4 +106,3 @@ function CharactersPage() {
 }
 
 export default CharactersPage;
-

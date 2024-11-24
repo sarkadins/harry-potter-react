@@ -14,13 +14,11 @@ function CharacterList({ characters }) {
             <div key={index} className={`character-card ${houseClass}`}>
               <Link to={`/character/${character.id}`}>
                 <h2>{character.name}</h2>
-                {character && (
-                  <img
-                    src={character.image || "/wizard.png"}
-                    alt={character.name}
-                    className="character-image"
-                  />
-                )}
+                <img
+                  src={character.image || "/wizard.png"}
+                  alt={character.name}
+                  className="character-image"
+                />
               </Link>
             </div>
           );
