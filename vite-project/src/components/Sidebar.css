@@ -1,11 +1,10 @@
-/* Sidebar Styles */
 .sidebar {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
   border-radius: 8px;
   width: 200px;
-  height: 100vh; /* Full height sidebar */
-  position: fixed; /* Keep it fixed on the side */
+  height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
   box-shadow: 4px 0 6px rgba(0, 0, 0, 0.5);
@@ -16,7 +15,7 @@
   font-size: 1.5em;
   text-align: center;
   margin-bottom: 20px;
-  font-family: 'Cinzel', serif; /* Harry Potter theme font */
+  font-family: 'Cinzel', serif;
   color: #ffd700;
 }
 
@@ -30,12 +29,12 @@
 }
 
 .sidebar nav ul li a {
-  color: #ffd700; /* Golden color for links */
+  color: #ffd700;
   text-decoration: none;
   font-size: 1.2em;
 }
 
 .sidebar nav ul li a:hover {
   text-decoration: underline;
-  color: #fff; /* White on hover */
+  color: #fff;
 }
