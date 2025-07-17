@@ -42,7 +42,7 @@ jobs:
       - name: Upload build output
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./vite-project/
+          path: ./vite-project/src
 
       - name: Deploy to GitHub Pages
         id: deployment
