@@ -1,4 +1,4 @@
-# .github/workflows/deploy.yml
+# .github/workflows/hp_react.yml
 
 name: Deploy Vite app to GitHub Pages
 
@@ -29,18 +29,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'  # or whatever version you're using
+          node-version: '18'
 
       - name: Install dependencies
+        working-directory: ./vite-project
         run: npm install
 
       - name: Build the app
+        working-directory: ./vite-project
         run: npm run build
 
       - name: Upload build output
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./vite-project/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
